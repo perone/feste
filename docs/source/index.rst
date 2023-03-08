@@ -6,7 +6,7 @@
 |Lint| |Tests| |Coverage| |License|
 
 Welcome to **Feste**. Feste is a free and open-source framework with
-permissive license that allows scalable compositioning of NLP tasks
+permissive license that allows scalable composition of NLP tasks
 using a graph execution model that is optimized and executed by specialized
 schedulers.
 

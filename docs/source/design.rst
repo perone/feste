@@ -29,8 +29,8 @@ As you can see in the image above, the following components are shown:
   diverge more and more from Dask graph implementation as we implement
   more features in Feste.
 
-* **Optimization**: The :mod:`feste.optimization` API is mainly of internal
-  use and it is responsible for things like automatic batching both as a
+* **Optimization**: The :mod:`feste.optimization` API is mainly intended for internal
+  use, and it is responsible for things like automatic batching both as a
   static optimization (on the graph before execution) and also as a dynamic
   optimization during execution by a scheduler.
 
@@ -41,12 +41,12 @@ As you can see in the image above, the following components are shown:
 * **Execution**: The execution is handled by the :mod:`feste.compute` and
   the :mod:`feste.scheduler` API. 
 
-  .. note:: Right now we only support local multiprocessing but we are
+  .. note:: Right now we only support local multiprocessing, but we are
             working to support Dask distributed as well.
 
 Eager mode
 -------------------------------------------------------------------------------
-Feste also offers a **eager mode**, where tasks are executed immediately without
+Feste also offers an **eager mode**, where tasks are executed immediately without
 building a graph and scheduling execution. This is very useful especially 
 for when you need to debug code.
 

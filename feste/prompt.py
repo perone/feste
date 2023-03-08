@@ -26,7 +26,7 @@ def _pickle_Language(cp: iso639.Language) -> Any:
 copyreg.pickle(iso639.Language, _pickle_Language)
 
 
-# Internal feste globals
+# Internal Feste globals
 FESTE_TEMPLATE_GLOBALS: dict[str, Any] = {
     # TODO: add globals and utilities that are internal to Feste
 }
@@ -38,7 +38,7 @@ class LanguageMismatch(UserWarning):
 
 
 class FesteEnvironment(Environment):
-    """This is the default Feste environment, it adds Feste's globals
+    """This is the default Feste environment, it adds Feste's global
     utilities into the Jinja2 environment.
     """
     def __init__(self, **kwargs) -> None:  # type: ignore[no-untyped-def]
