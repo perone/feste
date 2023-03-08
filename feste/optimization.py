@@ -21,7 +21,7 @@ def make_getitem_task(object: Any, index: int) -> Any:
 
 
 class Optimization(ABC):
-    """Optimization abstract class. This class represents a
+    """Optimization abstract class. This class represents an
     optimization that can be applied on the Feste graph."""
     @abstractmethod
     def apply(self, graph: FesteGraph) -> FesteGraph:

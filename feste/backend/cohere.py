@@ -42,7 +42,7 @@ class Cohere(FesteBase):
 
     .. note:: Note that the Cohere API uses an internal thread pool to do calls. This
               internal pool is replaced by a dummy one in Feste's implementation because
-              we are already paralelizing the calls from outside of Cohere API
+              we are already parallelizing the calls from outside of Cohere API
               implementation.
 
     :param api_key: the Cohere API key

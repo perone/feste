@@ -11,7 +11,7 @@ from rich.pretty import pprint
 
 class FesteGraph(Mapping):
     """A computational graph representing the flow described by the
-    call of feste tasks.
+    call of Feste tasks.
 
     :param graph: initialize from a dictionary.
     """

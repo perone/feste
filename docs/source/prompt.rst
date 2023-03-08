@@ -3,12 +3,12 @@ Prompt templates
 To facilitate prompting management we use
 `Jinja2 <https://jinja.palletsprojects.com/en/3.1.x/templates>`_ templating
 engine. Jinja2 is quite powerful because it has a rich language for loops,
-controls and variable rendring with proper environment management, therefore
+controls and variable rendering with proper environment management, therefore
 there is no need to reinvent the wheel.
 
-.. seealso:: Different than other LLM orchestration and chaining APIs, **Feste
+.. seealso:: Unlike other LLM orchestration and chaining APIs, **Feste
              prompts are language-aware**. This is a design choice to enable
-             multi-lingual prompts and proper language manamgement. We adopted
+             multilingual prompts and proper language management. We adopted
              the `ISO-639 <https://en.wikipedia.org/wiki/ISO_639>`_ for it.
 
 .. note:: All examples in this page are executed in **eager mode** for clarity.
@@ -65,7 +65,7 @@ Prompt environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Sometimes it is helpful to share a common environment across different
 prompt templates. Think of systems where for example you want to share
-a agent name across different templates. To achieve that you can use
+an agent name across different templates. To achieve that you can use
 an environment like in the example below:
 
 .. code-block:: python
@@ -81,7 +81,3 @@ an environment like in the example below:
     
     print(p(message="John"))
     "Hello John! My name is SmartBot."
-
-
-
-
