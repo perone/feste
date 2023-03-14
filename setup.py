@@ -38,7 +38,7 @@ setuptools.setup(
         "rich>=13.3.1",
         "dask>=2023.2.0",
         "toolz>=0.12.0",
-        "cohere>=3.9.0",
+        "cohere>=4.0.1",
         "cloudpickle>=2.2.1",
     ],
     extras_require={
