@@ -23,7 +23,7 @@ development_requires: List[str] = [
 
 setuptools.setup(
     name="feste",
-    version="0.1.0",
+    version="0.2.0",
     author="Christian S. Perone",
     author_email="christian.perone@gmail.com",
     description="Scalable NLP compositions with graph optimizations.",
