@@ -81,16 +81,9 @@ class BatchOptimization(Optimization):
 
     def apply(self, graph: FesteGraph) -> FesteGraph:
         # Get all tasks from the graph
-        dependencies = graph.get_all_dependencies()
         tasks = []
         for key, task in dict(graph).items():
             if not istask(task):
-                continue
-
-            # This can be improved as we are
-            # not optimizing nodes that have dependencies
-            # to avoid circular dependencies
-            if dependencies[key]:
                 continue
 
             # Add the key as suffix of the task arguments
@@ -127,7 +120,7 @@ class BatchOptimization(Optimization):
 
             # New task using rewriting rule
             new_function = self.rewrite_rules[group_key[0]]
-            new_task = (new_function, group_key[1]) + (arg_list,)
+            new_task = (new_function, group_key[1]) + (list(arg_list),)
             key_name = "fuse-batch-" + tokenize(new_task)
             new_tasks[key_name] = new_task
 

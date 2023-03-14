@@ -46,20 +46,17 @@ class Cohere(FesteBase):
               implementation.
 
     :param api_key: the Cohere API key
-    :param version: optional Cohere version
     :param client_name: optional client name
     :param check_api_key: if API key should be checked (offline)
     :param max_retries: default number of retries
     """
     def __init__(self, api_key: str,
-                 version: Optional[str] = None,
                  client_name: Optional[str] = None,
                  check_api_key: bool = True,
                  max_retries: int = 3) -> None:
         super().__init__()
         self.client = cohere.Client(api_key=api_key,
                                     num_workers=1,
-                                    version=version,
                                     check_api_key=check_api_key,
                                     max_retries=max_retries,
                                     client_name=client_name)

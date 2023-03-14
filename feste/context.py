@@ -3,7 +3,7 @@ from typing import Any
 # Default global context
 global_context: dict[str, Any] = {
     "eager": False,
-    "multiprocessing.chunk_size": 1,
+    "multiprocessing.chunk_size": 2,
     "multiprocessing.rerun_exceptions_locally": False,
     "multiprocessing.num_workers": None,
     "multiprocessing.func_loads": None,

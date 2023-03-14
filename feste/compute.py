@@ -28,5 +28,6 @@ def compute(*args, scheduler_fn: Callable = get_multiprocessing,  # type: ignore
         keys.append(x.__dask_keys__())
         postcomputes.append(x.__dask_postcompute__())
 
-    results = scheduler_fn(dict(feste_graph), keys, **kwargs)
+    results = scheduler_fn(dict(feste_graph), keys,
+                           optimize_graph=optimize_graph, **kwargs)
     return repack([f(r, *a) for r, (f, a) in zip(results, postcomputes)])  # type: ignore
