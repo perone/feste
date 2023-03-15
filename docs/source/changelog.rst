@@ -8,6 +8,7 @@ Release v.0.2.0 `(TBD)` **[unreleased]**
     * Fixed issue with batch optimization;
     * Fixed codecov configuration to avoid PRs being blocked;
     * Documentation typos (thanks to `@flowck <https://github.com/flowck>`_);
+    * Added new graph dagviz metro visualization;
 
 Release v.0.1.0 `(Mar 2023)`
 -------------------------------------------------------------------------------
