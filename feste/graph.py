@@ -1,6 +1,8 @@
 from graphlib import TopologicalSorter
-from typing import Any, Iterator, Mapping
+from typing import Any, Iterator, Mapping, TextIO
 
+import dagviz
+import networkx as nx
 from dask.base import collections_to_dsk
 from dask.base import unpack_collections as base_unpack_collections
 from dask.core import get_dependencies
@@ -88,3 +90,14 @@ class FesteGraph(Mapping):
         """
         dot_graph(dict(self), filename=filename,
                   verbose=True, collapse_outputs=False)
+
+    def dagviz_metro(self, svg_handle: TextIO) -> None:
+        """Writes a metro style dag visualization using dagviz.
+
+        :param svg_handle: the svg file type object
+        :return: svg content
+        """
+        deps = self.get_all_dependencies()
+        G = nx.DiGraph(deps)
+        r = dagviz.render_svg(G)
+        svg_handle.write(r)

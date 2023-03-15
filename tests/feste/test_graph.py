@@ -1,4 +1,6 @@
+import io
 import unittest
+from contextlib import closing
 
 from feste.graph import FesteGraph
 from feste.task import feste_task
@@ -52,3 +54,14 @@ class TestGraph(unittest.TestCase):
         self.assertIn(static_order[0], parallel)
         self.assertIn(static_order[1], parallel)
         self.assertIn(static_order[2], c.key)
+
+    def test_dagviz(self):
+        add = self.get_dummy_graph()
+        a = add(1, 1)
+        b = add(2, 2)
+        c = a + b
+        feste_graph, _, _ = FesteGraph.collect([c])
+        with closing(io.StringIO()) as sio:
+            feste_graph.dagviz_metro(sio)
+            val = sio.getvalue()
+        self.assertTrue(len(val) > 0)

@@ -40,6 +40,7 @@ setuptools.setup(
         "toolz>=0.12.0",
         "cohere>=4.0.1",
         "cloudpickle>=2.2.1",
+        "dagviz>=0.3.0",
     ],
     extras_require={
         'dev': development_requires,
