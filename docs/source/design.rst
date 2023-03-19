@@ -54,7 +54,7 @@ To enable eager mode, just use Feste :mod:`feste.context` configuration as
 shown in the example below:
 
 .. code-block:: python
-    :emphasize-lines: 3
+    :emphasize-lines: 4
     
     from feste import context
     from feste.prompt import Prompt
